@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     path: apps/
-    repoURL: https://github.com/arvin-pjr/argocd-test.git
+    repoURL: git@github.com:arvin-pjr/argocd-test.git
     targetRevision: HEAD
   syncPolicy:
     automated:
