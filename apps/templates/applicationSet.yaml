@@ -23,17 +23,17 @@ spec:
             revision: HEAD
   template:
     metadata:
-      name: '{{chart}}'
+      name: '{{"{{"}}chart{{"}}"}}'
     spec:
       project: "default"
       source:
         repoURL: git@github.com:arvin-pjr/argocd-test.git
         targetRevision: HEAD
-        path: 'charts/{{chart}}'
+        path: 'charts/{{"{{"}}chart{{"}}"}}'
         helm:
-          releaseName: '{{releaseName}}'
+          releaseName: '{{"{{"}}releaseName{{"}}"}}'
           valueFiles:
-          - 'values-{{cluster}}.yaml'
+          - 'values-{{"{{"}}cluster}}.ya{{"}}"}}'
       destination:
-        server: '{{url}}'
-        namespace: '{{namespace}}'
+        server: '{{"{{"}}url{{"}}"}}'
+        namespace: '{{"{{"}}namespace{{"}}"}}'
