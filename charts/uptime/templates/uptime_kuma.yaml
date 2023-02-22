@@ -1,6 +1,0 @@
-image:
-  registry: ${IMAGE_REGISTRY}
-  repository: ${IMAGE_REPOSITORY}
-  tag: ${IMAGE_TAG}
-persistence:
-  enabled: true

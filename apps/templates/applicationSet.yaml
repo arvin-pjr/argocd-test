@@ -11,20 +11,17 @@ spec:
           elements:
           - cluster: dev
             url: https://kubernetes.default.svc
-          # - cluster: prod
-          #   url: https://kubernetes.default.svc
+
       - list:
           elements:
           - chart: uptime
             namespace: arvin
             releaseName: uptime-kuma
             revision: HEAD
-            valuesFile: 'values-{{cluster}}.yaml'
           - chart: nginx
             namespace: arvin
             releaseName: nginx
             revision: HEAD
-            valuesFile: 'values-{{cluster}}.yaml'
   template:
     metadata:
       name: '{{cluster}}-{{chart}}'
@@ -37,7 +34,7 @@ spec:
         helm:
           releaseName: '{{releaseName}}'
           valueFiles:
-          - '{{valuesFile}}'
+          - 'values-{{cluster}}.yaml'
       destination:
         server: '{{url}}'
         namespace: '{{namespace}}'
