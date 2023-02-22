@@ -13,6 +13,8 @@ spec:
     path: apps/
     repoURL: git@github.com:arvin-pjr/argocd-test.git
     targetRevision: HEAD
+    helm:
+      releaseName: root
   syncPolicy:
     automated:
       prune: true
