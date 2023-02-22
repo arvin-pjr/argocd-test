@@ -7,14 +7,12 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: arvin
   project: default
   source:
     path: apps/
     repoURL: git@github.com:arvin-pjr/argocd-test.git
     targetRevision: HEAD
-    helm:
-      releaseName: root
   syncPolicy:
     automated:
       prune: true
